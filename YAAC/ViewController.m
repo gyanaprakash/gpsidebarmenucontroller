@@ -21,11 +21,11 @@ typedef int(^BlockOperation) (int, int);
 BlockOperation operationCreater(int op)
 {
     if (op == 0)
-        return ^(int a, int b){ int result=0; result = a+b; return result;};
-     if(op == 1)
-         return ^(int a, int b){ int result=0; result = a*b; return result;};
+        return ^(int a, int b){return a+b;};
+    if(op == 1)
+        return ^(int a, int b){return a*b;};
     if(op == 2)
-        return ^(int a, int b){int result=0;result = a/b;return result;};
+        return ^(int a, int b){return a/b;};
     return 0;
 };
 
@@ -33,8 +33,8 @@ BlockOperation operationCreater(int op)
 
 - (void)viewDidLoad
 {
-    BlockOperation sum = operationCreater(1);
-    NSLog(@"%d",sum(44,4));
+    BlockOperation sum = operationCreater(0);
+    NSLog(@"%d",sum(45,58));
     
     [super viewDidLoad];
     //***************************BLOCK CALLING****************
@@ -93,7 +93,6 @@ BlockOperation operationCreater(int op)
     function(^{
         NSLog(@"success");
     });
-    
 }
 
     int (^add1)(int, int, int)=^(int x, int y, int z){
@@ -101,20 +100,15 @@ BlockOperation operationCreater(int op)
         result=x/y;
         return result;
     };
-
-
     void func(void (^a) (void)) // we do need to use an identifier in the parameter list now, of course
     {
         NSLog(@"going to invoke the passed in block now.");
         a();
     };
-
-
     void function(void(^b)(void))
     {
         b();
     }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
