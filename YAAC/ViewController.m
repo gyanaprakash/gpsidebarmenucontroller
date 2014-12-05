@@ -15,7 +15,7 @@
     int (^add)(int, int, int);
 }
 @end
-
+//***********************************************************************
 typedef int(^BlockOperation) (int, int);
 
 BlockOperation operationCreater(int op)
@@ -28,12 +28,36 @@ BlockOperation operationCreater(int op)
         return ^(int a, int b){return a/b;};
     return 0;
 };
+//***********************************************************************
+
+//typedef int(^iiblock_t)(int);
+//
+//void func1(int arr[], int size, iiblock_t formula)
+//{
+//    for ( int i = 0; i < size; i++ )
+//    {
+//        arr[i] = formula(arr[i]);
+//    }
+//}
+
+//***********************************************************************
 
 @implementation ViewController
 
 - (void)viewDidLoad
 {
+    //***********************************************************************
+
+    //    int a[] = {10, 20, 30, 40, 50, 60};
+//    func1(a, 6, ^int(int x) {
+//        NSLog(@"%d",x*2);
+//
+//        return x*2;
+//    });
+   
+    //***********************************************************************
     BlockOperation sum = operationCreater(0);
+    
     NSLog(@"%d",sum(45,58));
     
     [super viewDidLoad];
@@ -94,7 +118,7 @@ BlockOperation operationCreater(int op)
         NSLog(@"success");
     });
 }
-
+//***********************************************************************
     int (^add1)(int, int, int)=^(int x, int y, int z){
         int result=0;
         result=x/y;
@@ -109,6 +133,7 @@ BlockOperation operationCreater(int op)
     {
         b();
     }
+//***********************************************************************
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
