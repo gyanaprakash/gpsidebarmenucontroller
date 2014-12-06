@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "BlockClass.h"
-@interface ViewController ()
+@interface ViewController ()<UIGestureRecognizerDelegate>
 {
     //***************************BLOCK CREATING/DECLARING****************
 
@@ -139,7 +139,6 @@ void func1(int arr[], int size, iiblock_t formula)
 //***********************************************************************
 - (IBAction)btnClicked:(UIButton *)sender {
     if (isclick==0) {
-        isclick = 1;
         
         [UIView animateWithDuration:0.5
                               delay:0.1
@@ -154,15 +153,20 @@ void func1(int arr[], int size, iiblock_t formula)
              self.menueView.layer.shadowOffset = CGSizeMake(5, 5);
              self.menueView.frame = frame;
              self.mainView.frame=self.view.frame;
+             
          }
                          completion:^(BOOL finished)
          {
+             isclick = 1;
+             self.gestureRecognizer.enabled=YES;
+             [self.gestureRecognizer addTarget:self action:@selector(gestureTap)];
+             [self.menueView addGestureRecognizer:self.gestureRecognizer];
              NSLog(@"Completed");
          }];
     }
     else if (isclick == 1)
     {
-        isclick = 0;
+        self.gestureRecognizer.enabled=NO;
     [UIView animateWithDuration:0.5
                           delay:0.1
                         options: UIViewAnimationOptionTransitionCrossDissolve
@@ -180,13 +184,40 @@ void func1(int arr[], int size, iiblock_t formula)
      }
                      completion:^(BOOL finished)
      {
+         isclick = 0;
+
          NSLog(@"Completed");
-         
+         [self.menueView removeGestureRecognizer:self.gestureRecognizer];
+         [self.menueView reloadInputViews];
+
      }];
     }
 }
 
-
+-(void)gestureTap
+{
+    [UIView animateWithDuration:0.5
+                          delay:0.1
+                        options: UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^
+     {
+         CGRect frame = self.view.frame;
+         frame.origin.y = 0;
+         frame.origin.x = (-250);
+         self.mainView.frame=frame;
+         
+         CGRect frame1 = self.view.frame;
+         frame1.origin.y = 0;
+         frame1.origin.x = 0;
+         self.menueView.frame = frame1;
+     }
+                     completion:^(BOOL finished)
+     {
+         NSLog(@"Completed");
+         [self.menueView removeGestureRecognizer:self.gestureRecognizer];
+         [self.menueView reloadInputViews];
+     }];
+}
 
 
 - (void)didReceiveMemoryWarning {

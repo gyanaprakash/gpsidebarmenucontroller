@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
+                <outlet property="btn" destination="LgP-za-8u9" id="MyF-ZR-Qwo"/>
+                <outlet property="gestureRecognizer" destination="fVg-sH-q67" id="4iZ-g6-foo"/>
                 <outlet property="mainView" destination="ys2-2W-Nmt" id="aLr-iy-oxt"/>
                 <outlet property="menueView" destination="hEK-S0-q1B" id="Qve-Yd-zNX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ali-hi-88i"/>
@@ -316,11 +318,18 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.76470595600000002" green="0.36862745879999997" blue="0.1764705926" alpha="1" colorSpace="deviceRGB"/>
+            <gestureRecognizers/>
             <point key="canvasLocation" x="323" y="284"/>
         </view>
+        <tapGestureRecognizer id="fVg-sH-q67">
+            <connections>
+                <outlet property="delegate" destination="-1" id="bMB-BB-mIE"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="connections_btn_normal_iphone_shared.png" width="320" height="480"/>

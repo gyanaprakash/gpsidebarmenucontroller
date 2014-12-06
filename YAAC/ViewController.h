@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbldecleration;
 @property (weak, nonatomic) IBOutlet UIView *menueView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureRecognizer;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 
 - (IBAction)btnClicked:(UIButton *)sender;
 
