@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>26CDCB03-10BB-485E-9137-5EA5D4EC0D29</string>
+	<key>IDESourceControlProjectName</key>
+	<string>YAAC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8B1CA71C96FE7DC5A6BB2E7FE0F026B06866AA4E</key>
+		<string>https://github.com/gyanaprakash/BlockConceptClearation.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>YAAC.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8B1CA71C96FE7DC5A6BB2E7FE0F026B06866AA4E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gyanaprakash/BlockConceptClearation.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8B1CA71C96FE7DC5A6BB2E7FE0F026B06866AA4E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8B1CA71C96FE7DC5A6BB2E7FE0F026B06866AA4E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YAAC</string>
+		</dict>
+	</array>
+</dict>
+</plist>

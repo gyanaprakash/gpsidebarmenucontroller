@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    BOOL isclick;
+}
 @property (weak, nonatomic) IBOutlet UILabel *lbldecleration;
+@property (weak, nonatomic) IBOutlet UIView *menueView;
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+
+- (IBAction)btnClicked:(UIButton *)sender;
 
 @end
 

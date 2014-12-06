@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "BlockClass.h"
 @interface ViewController ()
 {
     //***************************BLOCK CREATING/DECLARING****************
@@ -30,15 +30,15 @@ BlockOperation operationCreater(int op)
 };
 //***********************************************************************
 
-//typedef int(^iiblock_t)(int);
-//
-//void func1(int arr[], int size, iiblock_t formula)
-//{
-//    for ( int i = 0; i < size; i++ )
-//    {
-//        arr[i] = formula(arr[i]);
-//    }
-//}
+typedef int(^iiblock_t)(int);
+
+void func1(int arr[], int size, iiblock_t formula)
+{
+    for ( int i = 0; i < size; i++ )
+    {
+        arr[i] = formula(arr[i]);
+    }
+}
 
 //***********************************************************************
 
@@ -46,14 +46,14 @@ BlockOperation operationCreater(int op)
 
 - (void)viewDidLoad
 {
+    isclick = 0;
     //***********************************************************************
+    int a[] = {10, 20, 30, 40, 50, 60};
+    func1(a, 6, ^int(int x) {
+        NSLog(@"%d",x*2);
 
-    //    int a[] = {10, 20, 30, 40, 50, 60};
-//    func1(a, 6, ^int(int x) {
-//        NSLog(@"%d",x*2);
-//
-//        return x*2;
-//    });
+        return x*2;
+    });
    
     //***********************************************************************
     BlockOperation sum = operationCreater(0);
@@ -119,6 +119,9 @@ BlockOperation operationCreater(int op)
     });
 }
 //***********************************************************************
+
+
+//***********************************************************************
     int (^add1)(int, int, int)=^(int x, int y, int z){
         int result=0;
         result=x/y;
@@ -134,10 +137,62 @@ BlockOperation operationCreater(int op)
         b();
     }
 //***********************************************************************
+- (IBAction)btnClicked:(UIButton *)sender {
+    if (isclick==0) {
+        isclick = 1;
+        
+        [UIView animateWithDuration:0.5
+                              delay:0.1
+                            options: UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^
+         {
+             CGRect frame = self.view.frame;
+             frame.origin.y = 0;
+             frame.origin.x = (250);
+             self.menueView.layer.shadowOpacity = 0.8;
+             self.menueView.layer.shadowRadius = 25;
+             self.menueView.layer.shadowOffset = CGSizeMake(5, 5);
+             self.menueView.frame = frame;
+             self.mainView.frame=self.view.frame;
+         }
+                         completion:^(BOOL finished)
+         {
+             NSLog(@"Completed");
+         }];
+    }
+    else if (isclick == 1)
+    {
+        isclick = 0;
+    [UIView animateWithDuration:0.5
+                          delay:0.1
+                        options: UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^
+     {
+         CGRect frame = self.view.frame;
+         frame.origin.y = 0;
+         frame.origin.x = (-250);
+         self.mainView.frame=frame;
+         
+         CGRect frame1 = self.view.frame;
+         frame1.origin.y = 0;
+         frame1.origin.x = 0;
+        self.menueView.frame = frame1;
+     }
+                     completion:^(BOOL finished)
+     {
+         NSLog(@"Completed");
+         
+     }];
+    }
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
