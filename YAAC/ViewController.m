@@ -142,7 +142,7 @@ void func1(int arr[], int size, iiblock_t formula)
         
         [UIView animateWithDuration:0.5
                               delay:0.1
-                            options: UIViewAnimationOptionTransitionCrossDissolve
+                            options: UIViewAnimationOptionTransitionFlipFromLeft
                          animations:^
          {
              CGRect frame = self.view.frame;
@@ -169,7 +169,7 @@ void func1(int arr[], int size, iiblock_t formula)
         self.gestureRecognizer.enabled=NO;
     [UIView animateWithDuration:0.5
                           delay:0.1
-                        options: UIViewAnimationOptionTransitionCrossDissolve
+                        options: UIViewAnimationOptionTransitionFlipFromRight
                      animations:^
      {
          CGRect frame = self.view.frame;
