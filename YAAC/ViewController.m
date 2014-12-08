@@ -194,6 +194,37 @@ void func1(int arr[], int size, iiblock_t formula)
     }
 }
 
+- (IBAction)mint:(UIButton *)sender {
+    NSLog(@"mint");
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 40, 130, 40)];
+    [lbl setText:@"GYANA PRAKASH GOUDA"];
+    [self.menueView addSubview:lbl];
+    
+}
+
+- (IBAction)went:(UIButton *)sender {
+    NSLog(@"went");
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 100, 130, 40)];
+    [lbl setText:@"+91-8895666168"];
+    [self.menueView addSubview:lbl];
+}
+
+- (IBAction)gone:(UIButton *)sender {
+    NSLog(@"gone");
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 160, 130, 40)];
+    [lbl setText:@"IPHONE APP DEVELOPER"];
+    [self.menueView addSubview:lbl];
+
+}
+
+- (IBAction)complete:(UIButton *)sender {
+    NSLog(@"complete");
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 200, 130, 40)];
+    [lbl setText:@"COOL...."];
+    [self.menueView addSubview:lbl];
+
+}
+
 -(void)gestureTap
 {
     [UIView animateWithDuration:0.5

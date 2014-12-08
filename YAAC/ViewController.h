@@ -20,5 +20,10 @@
 
 - (IBAction)btnClicked:(UIButton *)sender;
 
+- (IBAction)mint:(UIButton *)sender;
+- (IBAction)went:(UIButton *)sender;
+- (IBAction)gone:(UIButton *)sender;
+- (IBAction)complete:(UIButton *)sender;
+
 @end
 
