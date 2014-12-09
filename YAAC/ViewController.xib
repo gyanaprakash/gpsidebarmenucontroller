@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
+                <outlet property="animationImg" destination="fTx-RU-U5z" id="TiN-Wa-c2a"/>
                 <outlet property="btn" destination="LgP-za-8u9" id="MyF-ZR-Qwo"/>
                 <outlet property="gestureRecognizer" destination="fVg-sH-q67" id="4iZ-g6-foo"/>
                 <outlet property="mainView" destination="ys2-2W-Nmt" id="aLr-iy-oxt"/>
@@ -38,6 +39,9 @@
                                     <state key="normal" image="Perspective-Button-Search-icon.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="settingTaped:" destination="-1" eventType="touchUpInside" id="WJU-43-z45"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AbD-c9-sfY">
                                     <rect key="frame" x="8" y="66" width="55" height="18"/>
@@ -60,6 +64,9 @@
                                     <state key="normal" image="BigRedButton2.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="helpTaped:" destination="-1" eventType="touchUpInside" id="nug-Yy-qNb"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YEc-8d-GFz">
                                     <rect key="frame" x="135" y="66" width="41" height="18"/>
@@ -75,6 +82,9 @@
                                     <state key="normal" image="Button Refresh-01.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="storeTaped:" destination="-1" eventType="touchUpInside" id="Pbm-LS-FxA"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X53-eP-wgz">
                                     <rect key="frame" x="188" y="66" width="54" height="18"/>
@@ -90,6 +100,9 @@
                                     <state key="normal" image="button.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="logOutTaped:" destination="-1" eventType="touchUpInside" id="UJv-0z-xbP"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -335,6 +348,10 @@
                                 <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="hPr-SE-lm5"/>
                             </connections>
                         </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fTx-RU-U5z">
+                            <rect key="frame" x="8" y="426" width="304" height="142"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.56048387096774188" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>

@@ -11,19 +11,30 @@
 @interface ViewController : UIViewController
 {
     BOOL isclick;
+    BOOL istap;
+    
 }
+
 @property (weak, nonatomic) IBOutlet UILabel *lbldecleration;
 @property (weak, nonatomic) IBOutlet UIView *menueView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureRecognizer;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 
+@property (retain, nonatomic) IBOutlet UIImageView *animationImg;
+
 - (IBAction)btnClicked:(UIButton *)sender;
 
+//****************BUTTON ACTION (METHOD) DECLARATION*********************
 - (IBAction)mint:(UIButton *)sender;
 - (IBAction)went:(UIButton *)sender;
 - (IBAction)gone:(UIButton *)sender;
 - (IBAction)complete:(UIButton *)sender;
+
+- (IBAction)settingTaped:(UIButton *)sender;
+- (IBAction)storeTaped:(UIButton *)sender;
+- (IBAction)logOutTaped:(UIButton *)sender;
+- (IBAction)helpTaped:(UIButton *)sender;
 
 @end
 

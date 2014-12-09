@@ -48,6 +48,8 @@ void func1(int arr[], int size, iiblock_t formula)
 - (void)viewDidLoad
 {
     isclick = 0;
+    istap =0;
+
     //***********************************************************************
     int a[] = {10, 20, 30, 40, 50, 60};
     func1(a, 6, ^int(int x) {
@@ -119,10 +121,9 @@ void func1(int arr[], int size, iiblock_t formula)
         NSLog(@"success");
     });
 }
-//***********************************************************************
-
 
 //***********************************************************************
+
     int (^add1)(int, int, int)=^(int x, int y, int z){
         int result=0;
         result=x/y;
@@ -137,7 +138,9 @@ void func1(int arr[], int size, iiblock_t formula)
     {
         b();
     }
-//***********************************************************************
+
+//************************THIS IS FOR SIDE BAR MENU***********************************************
+
 - (IBAction)btnClicked:(UIButton *)sender {
     if (isclick==0) {
         
@@ -195,24 +198,49 @@ void func1(int arr[], int size, iiblock_t formula)
     }
 }
 
+//*********************THESE ALL ARE SIDE BAR BUTTON ACTIONS****************************
+
 - (IBAction)mint:(UIButton *)sender {
-    NSLog(@"mint");
-    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 40, 130, 40)];
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 40, 300, 40)];
     [lbl setText:@"GYANA PRAKASH GOUDA"];
     [self.menueView addSubview:lbl];
-    
+
+    if (istap == 0) {
+    [lbl setTextColor:[UIColor redColor]];
+    [lbl setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:20]];
+        istap=1;
+         }
+    else if (istap == 1) {
+        istap=0;
+        [lbl setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:20]];
+        [lbl setTextColor:[UIColor yellowColor]];
+    }
 }
 
-- (IBAction)went:(UIButton *)sender {
-    NSLog(@"went");
-    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 100, 130, 40)];
-    [lbl setText:@"+91-8895666168"];
-    [self.menueView addSubview:lbl];
+- (IBAction)went:(UIButton *)sender{
+    if (istap == 0) {
+        UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 100, 230, 40)];
+
+        [lbl setText:@"+91-8895666168"];
+        [lbl setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:20]];
+        [self.menueView addSubview:lbl];
+
+        istap = 1;
+    }
+    else if (istap == 1){
+        UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 150, 230, 40)];
+
+    [lbl setText:@"+91-8754866168"];
+    [lbl setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:20]];
+        [self.menueView addSubview:lbl];
+
+        istap = 0;
+    }
 }
 
 - (IBAction)gone:(UIButton *)sender {
     NSLog(@"gone");
-    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 160, 130, 40)];
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 200, 230, 40)];
     [lbl setText:@"IPHONE APP DEVELOPER"];
     [self.menueView addSubview:lbl];
 
@@ -220,11 +248,38 @@ void func1(int arr[], int size, iiblock_t formula)
 
 - (IBAction)complete:(UIButton *)sender {
     NSLog(@"complete");
-    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 200, 130, 40)];
+    UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(10, 270, 230, 40)];
     [lbl setText:@"COOL...."];
     [self.menueView addSubview:lbl];
 
 }
+
+- (IBAction)settingTaped:(UIButton *)sender {
+    NSArray *imageNames = @[@"images.png"];
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < imageNames.count; i++)
+    {
+        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+    }
+    _animationImg.animationImages = images;
+    _animationImg.animationDuration = 0.5;
+    [_animationImg startAnimating];
+    [self.view addSubview:_animationImg];
+
+}
+
+- (IBAction)storeTaped:(UIButton *)sender {
+}
+
+- (IBAction)logOutTaped:(UIButton *)sender {
+    [self.menueView reloadInputViews];
+}
+
+- (IBAction)helpTaped:(id)sender {
+    
+}
+
+//***************************THIS IS FOR GESTURE RECOGNISER METHOD ***************
 
 -(void)gestureTap
 {
@@ -252,7 +307,8 @@ void func1(int arr[], int size, iiblock_t formula)
 }
 
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
