@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BlockClass.h"
+
 @interface ViewController ()<UIGestureRecognizerDelegate>
 {
     //***************************BLOCK CREATING/DECLARING****************
