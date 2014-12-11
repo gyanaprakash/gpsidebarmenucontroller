@@ -12,8 +12,11 @@
 {
     BOOL isclick;
     BOOL istap;
-    
 }
+@property (weak, nonatomic) IBOutlet UILabel *lat;
+@property (weak, nonatomic) IBOutlet UILabel *longnitude;
+@property (weak, nonatomic) IBOutlet UILabel *detail;
+@property (weak, nonatomic) IBOutlet UIButton *maptype;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbldecleration;
 @property (weak, nonatomic) IBOutlet UIView *menueView;

@@ -18,6 +18,11 @@
 		BCC381CE1A3184BE0054A11F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC381CD1A3184BE0054A11F /* Images.xcassets */; };
 		BCC381D11A3184BE0054A11F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC381CF1A3184BE0054A11F /* LaunchScreen.xib */; };
 		BCC381DD1A3184BE0054A11F /* YAACTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC381DC1A3184BE0054A11F /* YAACTests.m */; };
+		BCE719351A380883009BF16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE719341A380883009BF16A /* CoreLocation.framework */; };
+		BCE719371A380889009BF16A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE719361A380889009BF16A /* MapKit.framework */; };
+		BCE719391A380891009BF16A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE719381A380891009BF16A /* CoreFoundation.framework */; };
+		BCE7193B1A380896009BF16A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE7193A1A380896009BF16A /* UIKit.framework */; };
+		BCE7193D1A38089E009BF16A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE7193C1A38089E009BF16A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		BCC381D61A3184BE0054A11F /* YAACTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YAACTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC381DB1A3184BE0054A11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC381DC1A3184BE0054A11F /* YAACTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YAACTests.m; sourceTree = "<group>"; };
+		BCE719341A380883009BF16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BCE719361A380889009BF16A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BCE719381A380891009BF16A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BCE7193A1A380896009BF16A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BCE7193C1A38089E009BF16A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE7193D1A38089E009BF16A /* Foundation.framework in Frameworks */,
+				BCE7193B1A380896009BF16A /* UIKit.framework in Frameworks */,
+				BCE719391A380891009BF16A /* CoreFoundation.framework in Frameworks */,
+				BCE719371A380889009BF16A /* MapKit.framework in Frameworks */,
+				BCE719351A380883009BF16A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +87,7 @@
 		BCC381B41A3184BE0054A11F = {
 			isa = PBXGroup;
 			children = (
+				BCE7193E1A3808AC009BF16A /* FrameWork */,
 				BCB565081A35DAEE004AADFC /* Screen Shot 2014-12-08 at 6.33.03 pm.png */,
 				BCB5650B1A36C827004AADFC /* images.png */,
 				BCC381BF1A3184BE0054A11F /* YAAC */,
@@ -131,6 +147,18 @@
 				BCC381DB1A3184BE0054A11F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCE7193E1A3808AC009BF16A /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				BCE7193C1A38089E009BF16A /* Foundation.framework */,
+				BCE7193A1A380896009BF16A /* UIKit.framework */,
+				BCE719381A380891009BF16A /* CoreFoundation.framework */,
+				BCE719361A380889009BF16A /* MapKit.framework */,
+				BCE719341A380883009BF16A /* CoreLocation.framework */,
+			);
+			name = FrameWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

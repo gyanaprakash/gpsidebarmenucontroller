@@ -8,13 +8,21 @@
 
 #import "ViewController.h"
 #import "BlockClass.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface ViewController ()<UIGestureRecognizerDelegate>
+@interface ViewController ()<UIGestureRecognizerDelegate,CLLocationManagerDelegate,MKMapViewDelegate>
 {
     //***************************BLOCK CREATING/DECLARING****************
-
-    int (^add)(int, int, int);
+   
+        CLLocationManager *locationManager;
+        CLGeocoder *geocoder;
+        CLPlacemark *placemark;
+        CLLocation *location;
+     int (^add)(int, int, int);
 }
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
 //***********************************************************************
 typedef int(^BlockOperation) (int, int);
@@ -47,6 +55,13 @@ void func1(int arr[], int size, iiblock_t formula)
 
 - (void)viewDidLoad
 {
+    
+    
+    [_mapView setHidden:YES];
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    location =[[CLLocation alloc]init];
+
     isclick = 0;
     istap =0;
 
@@ -269,6 +284,20 @@ void func1(int arr[], int size, iiblock_t formula)
 }
 
 - (IBAction)storeTaped:(UIButton *)sender {
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+    locationManager.distanceFilter = 200.0f;
+    
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
+    
+    [_mapView setHidden:NO];
+    [_mapView setRotateEnabled:YES];
+    [_mapView setShowsBuildings:YES];
+    [_mapView setMultipleTouchEnabled:YES];
+    [_mapView setDelegate:self];
+
 }
 
 - (IBAction)logOutTaped:(UIButton *)sender {
@@ -304,6 +333,60 @@ void func1(int arr[], int size, iiblock_t formula)
          [self.menueView removeGestureRecognizer:self.gestureRecognizer];
          [self.menueView reloadInputViews];
      }];
+}
+
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        _lat.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        _longnitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+    }
+    
+    // Stop Location Manager
+    
+    [locationManager stopUpdatingLocation];
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            _detail.text = [NSString stringWithFormat:@"%@ %@\n%@\n%@,\n%@,\n%@\n%@\n%@", placemark.locality, placemark.administrativeArea, placemark.country,placemark.postalCode,placemark.subLocality,placemark.subAdministrativeArea,placemark.accessibilityHint,placemark.country];
+        } else {
+            NSLog(@"complete");
+        }
+    } ];
+}
+
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = [_lat.text intValue];
+    zoomLocation.longitude= [_longnitude.text intValue];
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5, 5);
+    [mapView setRegion:viewRegion animated:YES];
+    // Add an annotation
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = userLocation.coordinate;
+    point.title =[[UIDevice currentDevice]systemName];
+    point.subtitle =placemark.locality.capitalizedString;
+    
+    [mapView addAnnotation:point];
 }
 
 
