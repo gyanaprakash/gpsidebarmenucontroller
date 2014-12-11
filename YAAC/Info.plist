@@ -42,5 +42,14 @@
 	<string>I need Location</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.photography</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+		<string>audio</string>
+		<string>newsstand-content</string>
+		<string>voip</string>
+	</array>
 </dict>
 </plist>

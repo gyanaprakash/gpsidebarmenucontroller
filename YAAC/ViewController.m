@@ -231,6 +231,7 @@ void func1(int arr[], int size, iiblock_t formula)
         [lbl setTextColor:[UIColor yellowColor]];
     }
 }
+//********************************************************************************************************
 
 - (IBAction)went:(UIButton *)sender{
     if (istap == 0) {
@@ -252,6 +253,7 @@ void func1(int arr[], int size, iiblock_t formula)
         istap = 0;
     }
 }
+//********************************************************************************************************
 
 - (IBAction)gone:(UIButton *)sender {
     NSLog(@"gone");
@@ -260,6 +262,7 @@ void func1(int arr[], int size, iiblock_t formula)
     [self.menueView addSubview:lbl];
 
 }
+//********************************************************************************************************
 
 - (IBAction)complete:(UIButton *)sender {
     NSLog(@"complete");
@@ -268,6 +271,7 @@ void func1(int arr[], int size, iiblock_t formula)
     [self.menueView addSubview:lbl];
 
 }
+//********************************************************************************************************
 
 - (IBAction)settingTaped:(UIButton *)sender {
     NSArray *imageNames = @[@"images.png"];
@@ -279,9 +283,10 @@ void func1(int arr[], int size, iiblock_t formula)
     _animationImg.animationImages = images;
     _animationImg.animationDuration = 0.5;
     [_animationImg startAnimating];
-    [self.view addSubview:_animationImg];
+    [_menueView addSubview:_animationImg];
 
 }
+//********************************************************************************************************
 
 - (IBAction)storeTaped:(UIButton *)sender {
     locationManager.delegate = self;
@@ -335,6 +340,7 @@ void func1(int arr[], int size, iiblock_t formula)
      }];
 }
 
+//********************************************************************************************************
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -345,6 +351,7 @@ void func1(int arr[], int size, iiblock_t formula)
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
 }
+//********************************************************************************************************
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
@@ -356,7 +363,6 @@ void func1(int arr[], int size, iiblock_t formula)
     }
     
     // Stop Location Manager
-    
     [locationManager stopUpdatingLocation];
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
@@ -369,11 +375,9 @@ void func1(int arr[], int size, iiblock_t formula)
     } ];
 }
 
-
-
+//********************************************************************************************************
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = [_lat.text intValue];
     zoomLocation.longitude= [_longnitude.text intValue];
@@ -385,7 +389,6 @@ void func1(int arr[], int size, iiblock_t formula)
     point.coordinate = userLocation.coordinate;
     point.title =[[UIDevice currentDevice]systemName];
     point.subtitle =placemark.locality.capitalizedString;
-    
     [mapView addAnnotation:point];
 }
 
