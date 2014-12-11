@@ -353,7 +353,7 @@
                             </connections>
                         </button>
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Ww2-az-kBX">
-                            <rect key="frame" x="93" y="307" width="225" height="121"/>
+                            <rect key="frame" x="93.000000050862667" y="307" width="225" height="121"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="LCg-pU-IbH"/>
@@ -381,7 +381,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="clm-Ck-Ic1">
-                            <rect key="frame" x="138.99999952496958" y="171" width="173" height="105"/>
+                            <rect key="frame" x="139" y="171" width="173" height="105"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.76609753020000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>

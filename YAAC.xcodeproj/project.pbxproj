@@ -12,6 +12,10 @@
 		BC99E3471A32E3DA00E95F0F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC99E3461A32E3DA00E95F0F /* ViewController.xib */; };
 		BCB565091A35DAEE004AADFC /* Screen Shot 2014-12-08 at 6.33.03 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB565081A35DAEE004AADFC /* Screen Shot 2014-12-08 at 6.33.03 pm.png */; };
 		BCB5650C1A36C827004AADFC /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB5650B1A36C827004AADFC /* images.png */; };
+		BCBE31191A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.22.44 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBE31151A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.22.44 pm.png */; };
+		BCBE311A1A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.09 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBE31161A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.09 pm.png */; };
+		BCBE311B1A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.20 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBE31171A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.20 pm.png */; };
+		BCBE311C1A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.25.39 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBE31181A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.25.39 pm.png */; };
 		BCC381C31A3184BE0054A11F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC381C21A3184BE0054A11F /* main.m */; };
 		BCC381C61A3184BE0054A11F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC381C51A3184BE0054A11F /* AppDelegate.m */; };
 		BCC381C91A3184BE0054A11F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC381C81A3184BE0054A11F /* ViewController.m */; };
@@ -42,6 +46,10 @@
 		BC99E3461A32E3DA00E95F0F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		BCB565081A35DAEE004AADFC /* Screen Shot 2014-12-08 at 6.33.03 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-12-08 at 6.33.03 pm.png"; sourceTree = "<group>"; };
 		BCB5650B1A36C827004AADFC /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
+		BCBE31151A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.22.44 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-12-11 at 7.22.44 pm.png"; sourceTree = "<group>"; };
+		BCBE31161A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.09 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-12-11 at 7.23.09 pm.png"; sourceTree = "<group>"; };
+		BCBE31171A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.20 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-12-11 at 7.23.20 pm.png"; sourceTree = "<group>"; };
+		BCBE31181A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.25.39 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-12-11 at 7.25.39 pm.png"; sourceTree = "<group>"; };
 		BCC381BD1A3184BE0054A11F /* YAAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC381C11A3184BE0054A11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC381C21A3184BE0054A11F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +97,10 @@
 			children = (
 				BCE7193E1A3808AC009BF16A /* FrameWork */,
 				BCB565081A35DAEE004AADFC /* Screen Shot 2014-12-08 at 6.33.03 pm.png */,
+				BCBE31151A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.22.44 pm.png */,
+				BCBE31161A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.09 pm.png */,
+				BCBE31171A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.20 pm.png */,
+				BCBE31181A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.25.39 pm.png */,
 				BCB5650B1A36C827004AADFC /* images.png */,
 				BCC381BF1A3184BE0054A11F /* YAAC */,
 				BCC381D91A3184BE0054A11F /* YAACTests */,
@@ -242,6 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC99E3451A32E3AE00E95F0F /* BlockClass.xib in Resources */,
+				BCBE311C1A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.25.39 pm.png in Resources */,
+				BCBE31191A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.22.44 pm.png in Resources */,
+				BCBE311B1A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.20 pm.png in Resources */,
+				BCBE311A1A39DABA00D10C33 /* Screen Shot 2014-12-11 at 7.23.09 pm.png in Resources */,
 				BCC381D11A3184BE0054A11F /* LaunchScreen.xib in Resources */,
 				BC99E3471A32E3DA00E95F0F /* ViewController.xib in Resources */,
 				BCB5650C1A36C827004AADFC /* images.png in Resources */,
